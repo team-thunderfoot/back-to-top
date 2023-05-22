@@ -1,0 +1,1 @@
+(()=>{"use strict";new class{constructor(){this.init(),this.events()}init(){}events(){}}})();
