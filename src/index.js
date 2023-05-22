@@ -6,7 +6,6 @@ class Page {
         this.events()
     }
     init(){ 
-        console.log("nerea");
     }
     events(){}
 }
