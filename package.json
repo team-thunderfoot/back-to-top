@@ -2,9 +2,10 @@
   "name": "@teamthunderfoot/back-to-top",
   "version": "0.0.0",
   "description": "Back To Top package",
-  "main": "",
+  "main": "main.js",
   "scripts": {
-    "webpack": "webpack --watch"
+    "start": "webpack --watch",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
