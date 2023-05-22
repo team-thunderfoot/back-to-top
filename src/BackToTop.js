@@ -34,5 +34,10 @@ class BackToTop {
       behavior: "smooth",
     });
   }
+ 
+  destroy(){
+    this.JSUTIL.removeClass(this.DOM.link, this.DOM.activeClass);
+    this.DOM = {};
+  }
 }
 export default BackToTop;

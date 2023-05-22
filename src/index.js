@@ -6,10 +6,19 @@ class Page {
     this.events();
   }
   init() {
-    new BackToTop({
+    this.backToTop = new BackToTop({
       activeClass: "js--back-top--is-active",
       distance: 300,
     });
+
+    console.log("Sfsd");
+    document.querySelector(".js--destroy-top").addEventListener("click", (e) =>{
+      e.preventDefault();
+      console.log("sfds");
+      console.log(this.backToTop);
+      this.backToTop.destroy();
+      console.log(this.backToTop);
+    })
   }
   events() {}
 }
