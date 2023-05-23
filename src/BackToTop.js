@@ -4,26 +4,39 @@ class BackToTop {
   constructor(payload) {
     this.DOM = {
       activeClass: payload.activeClass,
-      link: document.querySelector(".js--back-top"),
+      links: document.querySelectorAll(payload.classEl) ?? [], // Seleccionar el elemento del DOM usando la clase CSS
+      distanceAtrr: payload.distance,
     };
-    this.distance = payload.distance ? payload.distance : 500;
+    this.listDistances = [];
+
     this.JSUTIL = new JSUTIL();
+  }
+
+  init() {
     this.events();
   }
 
   events() {
-    if (this.DOM.link) {
+    if (!!this.DOM.links.length) {
       window.addEventListener("scroll", this.checkScroll.bind(this));
-      this.clickEvent = this.DOM.link.addEventListener("click", this.goBackToTop.bind(this));
+      this.DOM.links.forEach((link) => {
+        this.listDistances.push(link.getAttribute(this.DOM.distanceAtrr));
+        this.clickEvent = link.addEventListener(
+          "click",
+          this.goBackToTop.bind(this)
+        );
+      });
     }
   }
 
   checkScroll() {
-    if (window.pageYOffset <= this.distance) {
-      this.JSUTIL.removeClass(this.DOM.link, this.DOM.activeClass);
-    } else {
-      this.JSUTIL.addClass(this.DOM.link, this.DOM.activeClass);
-    }
+    this.DOM.links.forEach((link, index) => {
+      if (window.pageYOffset <= this.listDistances[index]) {
+        this.JSUTIL.removeClass(link, this.DOM.activeClass);
+      } else {
+        this.JSUTIL.addClass(link, this.DOM.activeClass);
+      }
+    });
   }
 
   goBackToTop(e) {
@@ -34,8 +47,8 @@ class BackToTop {
       behavior: "smooth",
     });
   }
- 
-  destroy(){
+
+  destroy() {
     this.clickEvent = {};
   }
 }

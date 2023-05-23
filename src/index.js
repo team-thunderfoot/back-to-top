@@ -6,16 +6,27 @@ class Page {
     this.events();
   }
   init() {
-    this.backToTop = new BackToTop({
+    const backToTop = new BackToTop({
+      classEl: ".js--back-top",
       activeClass: "js--back-top--is-active",
-      distance: 300,
+      distance: "tf-data-distance",
     });
 
-    document.querySelector(".js--destroy-top").addEventListener("click", (e) =>{
-      e.preventDefault();
-      var destroy = this.backToTop.destroy();
-      console.log(destroy);
-    })
+    backToTop.init();
+
+    // const buttonDestroy = document.querySelectorAll(".js--destroy-top");
+    // buttonDestroy.addEventListener("click", (e) => {
+    //   e.preventDefault();
+    //   let destroy = this.backToTop.destroy();
+    // });
+
+    // document
+    //   .querySelector(".js--destroy-top")
+    //   .addEventListener("click", (e) => {
+    //     e.preventDefault();
+    //     var destroy = this.backToTop.destroy();
+    //     console.log(destroy);
+    //   });
   }
   events() {}
 }
