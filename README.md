@@ -34,6 +34,7 @@ The back-to-top button will automatically appear when the user scrolls beyond th
 ## Options
 
 `activeClass:` The CSS class applied to the back-to-top button when it is active (visible).
+
 `distance:` The distance from the top of the page at which the back-to-top button should appear.
 
 ## Destroy
