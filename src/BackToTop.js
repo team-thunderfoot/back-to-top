@@ -1,13 +1,13 @@
 import JSUTIL from "@andresclua/jsutil";
+import { tf_debounce } from "@andresclua/debounce-throttle";
 
 class BackToTop {
   constructor(payload) {
     this.DOM = {
       activeClass: payload.activeClass,
-      links: document.querySelectorAll(payload.linkClass) ?? [], // Seleccionar el elemento del DOM usando la clase CSS
+      links: document.querySelectorAll(payload.linkClass) ?? [],
       distanceTrigger: payload.distanceTrigger,
     };
-    this.listDistances = [];
 
     this.JSUTIL = new JSUTIL();
     this.events();
@@ -18,19 +18,23 @@ class BackToTop {
   events() {
     if (!!this.DOM.links.length) {
       this.DOM.links.forEach((link) => {
-        this.listDistances.push(link.getAttribute(this.DOM.distanceTrigger));
         this.clickEvent = link.addEventListener(
           "click",
           this.goBackToTop.bind(this)
         );
       });
-      window.addEventListener("scroll", this.checkScroll.bind(this));
+      window.addEventListener(
+        "scroll",
+        tf_debounce(() => {
+          this.checkScroll.bind(this);
+        })
+      );
     }
   }
 
   checkScroll() {
-    this.DOM.links.forEach((link, index) => {
-      if (window.pageYOffset <= this.listDistances[index]) {
+    this.DOM.links.forEach((link) => {
+      if (window.pageYOffset <= link.getAttribute(this.DOM.distanceTrigger)) {
         this.JSUTIL.removeClass(link, this.DOM.activeClass);
       } else {
         this.JSUTIL.addClass(link, this.DOM.activeClass);

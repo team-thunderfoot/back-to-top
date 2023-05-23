@@ -12,14 +12,6 @@ class Page {
       distanceTrigger: "tf-data-distance",
     });
 
-    backToTop.init();
-
-    // const buttonDestroy = document.querySelectorAll(".js--destroy-top");
-    // buttonDestroy.addEventListener("click", (e) => {
-    //   e.preventDefault();
-    //   let destroy = this.backToTop.destroy();
-    // });
-
     // document
     //   .querySelector(".js--destroy-top")
     //   .addEventListener("click", (e) => {
