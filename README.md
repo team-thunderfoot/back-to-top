@@ -23,8 +23,8 @@ class Index {
   }
   init() {
     const backToTop = new BackToTop({
-    activeClass: "js--back-top--is-active",
-    distance: 300,
+      activeClass: "js--back-top--is-active",
+      distance: 300,
     });
   }
 }
