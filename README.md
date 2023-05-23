@@ -9,7 +9,7 @@ The `back-to-top` package provides functionality for adding a back-to-top button
 ## Installation
 
 ```sh
-npm install @teamthunderfoot/back-top-top
+npm install @teamthunderfoot/back-to-top
 ```
 
 ## Usage
