@@ -15,7 +15,7 @@ npm install @teamthunderfoot/back-to-top
 ## Usage
 
 ```sh
-import BackToTop from 'back-to-top';
+import BackToTop from '@teamthunderfoot/back-to-top';
 
 class Index {
   constructor() {
