@@ -11,13 +11,10 @@ class Page {
       distance: 300,
     });
 
-    console.log("Sfsd");
     document.querySelector(".js--destroy-top").addEventListener("click", (e) =>{
       e.preventDefault();
-      console.log("sfds");
-      console.log(this.backToTop);
-      this.backToTop.destroy();
-      console.log(this.backToTop);
+      var destroy = this.backToTop.destroy();
+      console.log(destroy);
     })
   }
   events() {}

@@ -14,7 +14,7 @@ class BackToTop {
   events() {
     if (this.DOM.link) {
       window.addEventListener("scroll", this.checkScroll.bind(this));
-      this.DOM.link.addEventListener("click", this.goBackToTop.bind(this));
+      this.clickEvent = this.DOM.link.addEventListener("click", this.goBackToTop.bind(this));
     }
   }
 
@@ -36,8 +36,7 @@ class BackToTop {
   }
  
   destroy(){
-    this.JSUTIL.removeClass(this.DOM.link, this.DOM.activeClass);
-    this.DOM = {};
+    this.clickEvent = {};
   }
 }
 export default BackToTop;
