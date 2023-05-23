@@ -17,10 +17,20 @@ npm install @teamthunderfoot/back-to-top
 ```sh
 import BackToTop from 'back-to-top';
 
-const backToTop = new BackToTop({
-  activeClass: "js--back-top--is-active",
-  distance: 300,
-});
+class Index {
+  constructor() {
+    this.init();
+  }
+  init() {
+    const backToTop = new BackToTop({
+    activeClass: "js--back-top--is-active",
+    distance: 300,
+    });
+  }
+}
+
+export default Index;
+new Index();
 ```
 
 In your HTML file, include a button element with the class "js--back-top" that will trigger the back-to-top functionality.
