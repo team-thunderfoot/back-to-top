@@ -1,6 +1,7 @@
 # Back-to-top
 
 NPM Package : Back to Top
+
 [![npm version](https://badge.fury.io/js/back-to-top.svg)](https://badge.fury.io/js/back-to-top)
 
 The `back-to-top` package provides functionality for adding a back-to-top button to a web page that scrolls smoothly to the top of the page.
