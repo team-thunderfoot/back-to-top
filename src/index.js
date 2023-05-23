@@ -7,9 +7,9 @@ class Page {
   }
   init() {
     const backToTop = new BackToTop({
-      classEl: ".js--back-top",
+      linkClass: ".js--back-top",
       activeClass: "js--back-top--is-active",
-      distance: "tf-data-distance",
+      distanceTrigger: "tf-data-distance",
     });
 
     backToTop.init();

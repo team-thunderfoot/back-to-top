@@ -4,8 +4,8 @@ class BackToTop {
   constructor(payload) {
     this.DOM = {
       activeClass: payload.activeClass,
-      links: document.querySelectorAll(payload.classEl) ?? [], // Seleccionar el elemento del DOM usando la clase CSS
-      distanceAtrr: payload.distance,
+      links: document.querySelectorAll(payload.linkClass) ?? [], // Seleccionar el elemento del DOM usando la clase CSS
+      distanceTrigger: payload.distanceTrigger,
     };
     this.listDistances = [];
 
@@ -20,7 +20,7 @@ class BackToTop {
     if (!!this.DOM.links.length) {
       window.addEventListener("scroll", this.checkScroll.bind(this));
       this.DOM.links.forEach((link) => {
-        this.listDistances.push(link.getAttribute(this.DOM.distanceAtrr));
+        this.listDistances.push(link.getAttribute(this.DOM.distanceTrigger));
         this.clickEvent = link.addEventListener(
           "click",
           this.goBackToTop.bind(this)
