@@ -10,15 +10,13 @@ class BackToTop {
     this.listDistances = [];
 
     this.JSUTIL = new JSUTIL();
-  }
-
-  init() {
     this.events();
   }
 
+  init() {}
+
   events() {
     if (!!this.DOM.links.length) {
-      window.addEventListener("scroll", this.checkScroll.bind(this));
       this.DOM.links.forEach((link) => {
         this.listDistances.push(link.getAttribute(this.DOM.distanceTrigger));
         this.clickEvent = link.addEventListener(
@@ -26,6 +24,7 @@ class BackToTop {
           this.goBackToTop.bind(this)
         );
       });
+      window.addEventListener("scroll", this.checkScroll.bind(this));
     }
   }
 
