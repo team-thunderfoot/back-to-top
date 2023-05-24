@@ -2,7 +2,7 @@
   "name": "@teamthunderfoot/back-to-top",
   "version": "0.0.1",
   "description": "Back To Top package",
-  "main": "main.js",
+  "main": "",
   "scripts": {
     "start": "webpack --watch",
     "build": "webpack"
