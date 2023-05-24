@@ -1,9 +1,5 @@
 # Back-to-top
 
-NPM Package : Back to Top
-
-[![npm version](https://badge.fury.io/js/back-to-top.svg)](https://badge.fury.io/js/back-to-top)
-
 The `back-to-top` package provides a "Back to Top" button functionality that allows for smooth scrolling to the top of the page. It enables customization of the active CSS class and the distance trigger, which determines when the button becomes visible or hidden based on scrolling.
 
 ## Installation
