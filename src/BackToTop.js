@@ -5,7 +5,7 @@ class BackToTop {
   constructor(payload) {
     this.DOM = {
       activeClass: payload.activeClass,
-      links: document.querySelectorAll(payload.linkClass) ?? [],
+      links: document.querySelectorAll("." + payload.linkClass) ?? [],
       distanceTrigger: payload.distanceTrigger,
     };
 
@@ -26,7 +26,7 @@ class BackToTop {
       window.addEventListener(
         "scroll",
         tf_debounce(() => {
-          this.checkScroll.bind(this);
+          this.checkScroll();
         })
       );
     }
