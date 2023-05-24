@@ -23,7 +23,7 @@ class Index {
   }
   init() {
     const backToTop = new BackToTop({
-        linkClass: ".js--back-top",
+        linkClass: "js--back-top",
         activeClass: "js--back-top--is-active",
         distanceTrigger: "tf-data-distance",
     });
