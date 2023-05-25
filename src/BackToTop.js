@@ -27,7 +27,7 @@ class BackToTop {
         "scroll",
         tf_debounce(() => {
           this.checkScroll();
-        })
+        }, 150)
       );
     }
   }
