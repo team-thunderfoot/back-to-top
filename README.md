@@ -45,3 +45,11 @@ The `back-to-top button` will automatically appear when the user scrolls beyond 
 • `activeClass:` The CSS class applied to the back-to-top button when it is active (visible).
 
 • `distanceTrigger:` The data attribute that specifies the distance from the top of the page at which the back-to-top button should appear.
+
+## Destroy
+
+To remove the back-to-top functionality, you can use the destroy method. Call the destroy method on the instance of BackToTop:
+
+```sh
+const destroy = this.backToTop.destroy();
+```
