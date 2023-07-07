@@ -21,10 +21,19 @@ class Index {
   }
   init() {
     const backToTop = new BackToTop({
-        linkClass: "js--back-top",
-        activeClass: "js--back-top--is-active",
+        element: document.querySelector(".js--back-top"),
+        activeClass: "g--back-top-01--is-active",
         distanceTrigger: "tf-data-distance",
-    });
+    })
+
+
+    document.querySelectorAll(".js--back-top").forEach((element) => {
+        const backToTop = new BackToTop({
+            element: element,
+            activeClass: "g--back-top-01--is-active",
+            distanceTrigger: "tf-data-distance",
+        })
+    })
   }
 }
 
@@ -42,7 +51,7 @@ The `back-to-top button` will automatically appear when the user scrolls beyond 
 
 ## Options
 
-• `linkClass:` The CSS class selector for the back-to-top button element.
+• `element:` The CSS class selector for the back-to-top button element.
 
 • `activeClass:` The CSS class applied to the back-to-top button when it is active (visible).
 
