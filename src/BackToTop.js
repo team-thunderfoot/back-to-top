@@ -6,7 +6,7 @@ class BackToTop {
         this.DOM = {
             element: payload.element,
         }
-        this.distanceTrigger = payload.distanceTrigger
+        this.distanceTrigger = this.DOM.element.getAttribute(payload.distanceTrigger);
         this.activeClass = payload.activeClass
 
         this.JSUTIL = new JSUTIL()
@@ -36,7 +36,7 @@ class BackToTop {
 
     checkScroll() {
         // Check the scroll position and update the element activation
-        if (window.pageYOffset <= parseInt(this.DOM.element.getAttribute(this.distanceTrigger))) {
+        if (window.pageYOffset <= parseInt(this.distanceTrigger)) {
             this.JSUTIL.removeClass(this.DOM.element, this.activeClass) // Remove active class if scroll position is above the trigger point
         } else {
             this.JSUTIL.addClass(this.DOM.element, this.activeClass) // Add active class if scroll position is below the trigger point
