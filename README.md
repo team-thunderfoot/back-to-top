@@ -2,7 +2,7 @@
 
 The `back-to-top` package provides a "Back to Top" button functionality that allows for smooth scrolling to the top of the page. It enables customization of the active CSS class and the distance trigger, which determines when the button becomes visible or hidden based on scrolling.
 
-[Here's an example](https://team-thunderfoot.github.io/back-to-top/dist/index.html)
+[Here's an example](https://team-thunderfoot.github.io/back-to-top/)
 
 ## Installation
 
