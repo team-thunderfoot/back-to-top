@@ -51,7 +51,7 @@ The `back-to-top button` will automatically appear when the user scrolls beyond 
 
 ## Options
 
-• `element:` The CSS class selector for the back-to-top button element.
+• `element:` The back-to-top button element.
 
 • `activeClass:` The CSS class applied to the back-to-top button when it is active (visible).
 
